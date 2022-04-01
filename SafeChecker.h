@@ -11,12 +11,8 @@
 
 
 
-void check_all() {
-    Override::check_all();
-}
+void check_all();
 
-void dump_all() {
-    Override::dump_all();
-}
+void dump_all();
 
 #endif //OVERRIDE_SAFECHECKER_H

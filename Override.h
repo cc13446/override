@@ -24,4 +24,10 @@ public:
 void* operator new(std::size_t size, const std::string& file_name, int line) noexcept(false);
 void* operator new[](std::size_t size, const std::string& file_name, int line) noexcept(false);
 
+void operator delete(void * ptr, const std::string& file_name, int line) noexcept;
+void operator delete[](void * ptr, const std::string& file_name, int line) noexcept;
+
+void operator delete(void * ptr);
+void operator delete[](void * ptr);
+
 #endif //OVERRIDE_OVERRIDE_H

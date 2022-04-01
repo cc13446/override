@@ -9,8 +9,6 @@
 
 #define new new(__FILE__, __LINE__)
 
-
-
 void check_all();
 
 void dump_all();

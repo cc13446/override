@@ -4,6 +4,7 @@
 
 #ifndef OVERRIDE_SAFECHECKER_H
 #define OVERRIDE_SAFECHECKER_H
+#ifndef _DEBUG
 
 #include "Override.h"
 
@@ -13,4 +14,5 @@ void check_all();
 
 void dump_all();
 
+#endif
 #endif //OVERRIDE_SAFECHECKER_H

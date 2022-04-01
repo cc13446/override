@@ -1,11 +1,13 @@
 #include <iostream>
-#include "../ClassWrapper.h"
-#include "../Override.h"
-
+#include "../SafeChecker.h"
 
 #include "TestClass.h"
 
 int main() {
-    dbg(0, "%d %d", 1, 2);
+    int *a = new int[2];
+    int *b = new int[2];
+
+    dump_all();
     return 0;
 }
+

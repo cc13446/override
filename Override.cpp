@@ -7,7 +7,7 @@
 #include "Override.h"
 
 int Override::class_num = 0;
-ClassWrapper* Override::record[MAX_CLASS_NUM] = {nullptr};
+ClassWrapper* Override::record[MAX_CLASS_NUM] = {};
 
 void Override::check_all() {
     ASSERT(Override::class_num >= 0 && Override::class_num < MAX_CLASS_NUM);

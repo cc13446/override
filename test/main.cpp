@@ -11,7 +11,11 @@ int main() {
     delete[] a;
     b[2] = 1;
 
+
+#ifdef _DEBUG
     dump_all();
+#endif
+
     return 0;
 }
 

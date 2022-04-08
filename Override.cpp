@@ -31,7 +31,7 @@ void Override::dump_all() {
 
 void* operator new(std::size_t size, const std::string& file_name, int line) noexcept(false){
     ASSERT(Override::class_num >= 0 && Override::class_num < MAX_CLASS_NUM);
-    void* ptr = (void *)malloc(size + HEAD_SIZE + TAIL_SIZE);
+    auto * ptr = (char *)malloc(size + HEAD_SIZE + TAIL_SIZE);
     if (!ptr) {
         throw std::bad_alloc();
     }
@@ -50,7 +50,7 @@ void* operator new(std::size_t size, const std::string& file_name, int line) noe
 
 void* operator new[](std::size_t size, const std::string& file_name, int line) noexcept(false){
     ASSERT(Override::class_num >= 0 && Override::class_num < MAX_CLASS_NUM);
-    void* ptr = (void *)malloc(size + HEAD_SIZE + TAIL_SIZE);
+    auto * ptr = (char *)malloc(size + HEAD_SIZE + TAIL_SIZE);
     if (!ptr) {
         throw std::bad_alloc();
     }

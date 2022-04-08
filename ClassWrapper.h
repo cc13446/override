@@ -29,8 +29,8 @@
 
 
 
-const uint16_t HEAD_FILL = 0xc8c8;
-const uint16_t TAIL_FILL = 0x8c8c;
+const char HEAD_FILL = (char)0xc8;
+const char TAIL_FILL = (char)0x8c;
 
 #define HEAD_SIZE 128
 #define TAIL_SIZE 128

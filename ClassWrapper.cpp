@@ -16,17 +16,15 @@ ClassWrapper::ClassWrapper(std::string file_name, int line, int size, void *ptr,
 }
 
 void ClassWrapper::fill_head() const {
-    ASSERT(HEAD_SIZE % 16 == 0);
-    auto * temp = static_cast<uint16_t *>(head);
-    for(int i = 0; i < HEAD_SIZE / 16; i++) {
+    auto * temp = static_cast<char *>(head);
+    for(int i = 0; i < HEAD_SIZE; i++) {
         temp[i] = HEAD_FILL;
     }
 }
 
 void ClassWrapper::fill_tail() const {
-    ASSERT(TAIL_SIZE % 16 == 0);
-    auto * temp = static_cast<uint16_t *>(tail);
-    for(int i = 0; i < TAIL_SIZE / 16; i++) {
+    auto * temp = static_cast<char *>(tail);
+    for(int i = 0; i < TAIL_SIZE; i++) {
         temp[i] = TAIL_FILL;
     }
 }
@@ -37,17 +35,15 @@ void ClassWrapper::fill_all() const {
 }
 
 void ClassWrapper::check_head() const {
-    ASSERT(HEAD_SIZE % 16 == 0);
-    auto * temp = static_cast<uint16_t *>(head);
-    for(int i = 0; i < HEAD_SIZE / 16; i++) {
+    auto * temp = static_cast<char *>(head);
+    for(int i = 0; i < HEAD_SIZE; i++) {
         ASSERT_SAFE(temp[i] == HEAD_FILL, file_name.c_str(), line);
     }
 }
 
 void ClassWrapper::check_tail() const {
-    ASSERT(TAIL_SIZE % 16 == 0);
-    auto * temp = static_cast<uint16_t *>(tail);
-    for(int i = 0; i < TAIL_SIZE / 16; i++) {
+    auto * temp = static_cast<char *>(tail);
+    for(int i = 0; i < TAIL_SIZE ; i++) {
         ASSERT_SAFE(temp[i] == TAIL_FILL, file_name.c_str(), line);
     }
 }
